@@ -1,0 +1,12 @@
+2021-10-02 16:18:22|58.815µs|404|POST|/admin//add-new-category|127.0.0.1|36 B|9 B|{"name":"Laptop"}|
+2021-10-02 16:18:34|3.487318ms|400|POST|/admin/add-new-category|127.0.0.1|36 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:30:15|6.077827ms|400|POST|/admin/add-new-category|127.0.0.1|36 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:32:04|4.79122ms|400|POST|/admin/add-new-category|127.0.0.1|36 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:33:54|4.068621ms|400|POST|/admin/add-new-category|127.0.0.1|36 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:38:34|4.044961ms|400|POST|/admin/add-new-category|127.0.0.1|36 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:40:29|2.681475ms|400|POST|/admin/add-new-category|127.0.0.1|33 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:40:59|5.051751ms|400|POST|/admin/add-new-category|127.0.0.1|33 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:41:13|10.600916ms|400|POST|/admin/add-new-category|127.0.0.1|33 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:41:28|2.480709ms|400|POST|/admin/add-new-category|127.0.0.1|33 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:48:33|5.655516ms|201|POST|/admin/add-new-category|127.0.0.1|29 B|10 B|{"name":"Laptop"}|
+2021-10-02 16:49:42|3.44878ms|400|POST|/admin/add-new-category|127.0.0.1|35 B|10 B|{"name":"Mobile Phone"}|
