@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9877a21-3aac-45b1-8ff1-e4c3e0d011b1" name="Changes" comment="" />
+    <list default="true" id="a9877a21-3aac-45b1-8ff1-e4c3e0d011b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/type.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059/storage_v2/_src_/database/shop.9to1AA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059/storage_v2/_src_/database/shop.9to1AA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/type.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/type.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/migrations/000001_create_products_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/migrations/000001_create_products_table.up.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/migrations/000002_create_categories_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/migrations/000002_create_categories_table.up.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres/migrations/000003_create_types_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/migrations/000003_create_types_table.up.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/product.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

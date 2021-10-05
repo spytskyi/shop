@@ -19,8 +19,8 @@ type Product struct {
 	Id             int      `pg:"id,pk"`
 	VendorCode     string
 	Name           string
-	Category       *Category
-	Type           *Type
+	CategoryId     int
+	TypeId         int
 	Description    string
 	StockBalance   int
 	Specifications json.RawMessage
@@ -29,8 +29,8 @@ type Product struct {
 type ProductCreateRequest struct {
 	VendorCode     string `json:"vendor_code"`
 	Name           string `json:"name_product"`
-	Category       *Category
-	Type           *Type
+	CategoryId     int
+	TypeId         int
 	StockBalance   int `json:"stock_balance"`
 	Description    string
 	Specifications json.RawMessage

@@ -3,6 +3,14 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.23">
     <root id="1">
       <ServerVersion>13.4</ServerVersion>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+13441||-9223372036854775808|c|G
+13441||10|c|G
+13441||10|C|G
+13441||10|T|G</Grants>
       <DateStyle>mdy</DateStyle>
       <TimeZones>true ACDT
 true ACSST
@@ -104,7 +112,7 @@ false America/Argentina/San_Luis
 false America/Argentina/Tucuman
 false America/Argentina/Ushuaia
 false America/Aruba
-false America/Asuncion
+true America/Asuncion
 false America/Atikokan
 true America/Atka
 false America/Bahia
@@ -255,7 +263,7 @@ true America/Yellowknife
 false Antarctica/Casey
 false Antarctica/Davis
 false Antarctica/DumontDUrville
-false Antarctica/Macquarie
+true Antarctica/Macquarie
 false Antarctica/Mawson
 true Antarctica/McMurdo
 false Antarctica/Palmer
@@ -376,29 +384,29 @@ false Atlantic/Reykjavik
 false Atlantic/South_Georgia
 false Atlantic/St_Helena
 false Atlantic/Stanley
-false Australia/ACT
-false Australia/Adelaide
+true Australia/ACT
+true Australia/Adelaide
 false Australia/Brisbane
-false Australia/Broken_Hill
-false Australia/Canberra
-false Australia/Currie
+true Australia/Broken_Hill
+true Australia/Canberra
+true Australia/Currie
 false Australia/Darwin
 false Australia/Eucla
-false Australia/Hobart
-false Australia/LHI
+true Australia/Hobart
+true Australia/LHI
 false Australia/Lindeman
-false Australia/Lord_Howe
-false Australia/Melbourne
-false Australia/NSW
+true Australia/Lord_Howe
+true Australia/Melbourne
+true Australia/NSW
 false Australia/North
 false Australia/Perth
 false Australia/Queensland
-false Australia/South
-false Australia/Sydney
-false Australia/Tasmania
-false Australia/Victoria
+true Australia/South
+true Australia/Sydney
+true Australia/Tasmania
+true Australia/Victoria
 false Australia/West
-false Australia/Yancowinna
+true Australia/Yancowinna
 true BDST
 false BDT
 false BNT
@@ -612,7 +620,7 @@ false KRAST
 false KRAT
 false KST
 false Kwajalein
-false LHDT
+true LHDT
 false LHST
 false LIGT
 false LINT
@@ -674,7 +682,7 @@ false PST
 true PST8PDT
 false PWT
 true PYST
-false PYT
+true PYT
 true Pacific/Apia
 true Pacific/Auckland
 false Pacific/Bougainville
@@ -700,7 +708,7 @@ false Pacific/Marquesas
 false Pacific/Midway
 false Pacific/Nauru
 false Pacific/Niue
-false Pacific/Norfolk
+true Pacific/Norfolk
 false Pacific/Noumea
 false Pacific/Pago_Pago
 false Pacific/Palau
@@ -785,8 +793,8 @@ false Z
 false Zulu
 true posixrules
 </TimeZones>
-      <IntrospectionStateNumber>791</IntrospectionStateNumber>
-      <StartupTime>1633157401</StartupTime>
+      <IntrospectionStateNumber>1094</IntrospectionStateNumber>
+      <StartupTime>1633268588</StartupTime>
     </root>
     <database id="2" parent="1" name="shop">
       <ObjectId>16458</ObjectId>
@@ -801,8 +809,12 @@ true posixrules
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>792</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1095</IntrospectionStateNumber>
       <Current>1</Current>
+      <Relations>sequence|table|16932|16934|1
+sequence|table|17002|17004|1
+sequence|table|17015|17017|1
+</Relations>
     </database>
     <database id="3" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
@@ -875,7 +887,7 @@ true posixrules
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>792</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1095</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="19" parent="2" name="plpgsql">
@@ -976,42 +988,60 @@ true posixrules
       <Handler>pg_catalog.spghandler</Handler>
       <HandlerId>334</HandlerId>
     </access-method>
-    <table id="31" parent="18" name="categories">
-      <ObjectId>16636</ObjectId>
+    <sequence id="31" parent="18" name="categories_id_seq">
+      <ObjectId>16932</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>785</StateNumber>
+      <StateNumber>1024</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="32" parent="18" name="products_id_seq">
+      <ObjectId>17015</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1085</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="33" parent="18" name="types_id_seq">
+      <ObjectId>17002</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1069</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <table id="34" parent="18" name="categories">
+      <ObjectId>16934</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1028</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
-    <table id="32" parent="18" name="products">
-      <ObjectId>16653</ObjectId>
+    <table id="35" parent="18" name="products">
+      <ObjectId>17017</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
-    <table id="33" parent="18" name="types">
-      <ObjectId>16642</ObjectId>
+    <table id="36" parent="18" name="types">
+      <ObjectId>17004</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>785</StateNumber>
+      <StateNumber>1069</StateNumber>
       <AccessMethodId>2</AccessMethodId>
     </table>
-    <column id="34" parent="31" name="id">
+    <column id="37" parent="34" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>781</StateNumber>
-      <DefaultExpression>1</DefaultExpression>
+      <StateNumber>1024</StateNumber>
+      <DefaultExpression>nextval(&apos;categories_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="35" parent="31" name="name">
+    <column id="38" parent="34" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>781</StateNumber>
+      <StateNumber>1024</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="36" parent="31" name="categories_pkey">
-      <ObjectId>16640</ObjectId>
-      <StateNumber>781</StateNumber>
+    <index id="39" parent="34" name="categories_pkey">
+      <ObjectId>16938</ObjectId>
+      <StateNumber>1024</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1019,86 +1049,86 @@ true posixrules
       <ClassIds>1978</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="37" parent="31" name="categories_pkey">
-      <ObjectId>16641</ObjectId>
-      <StateNumber>781</StateNumber>
+    <key id="40" parent="34" name="categories_pkey">
+      <ObjectId>16939</ObjectId>
+      <StateNumber>1024</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>categories_pkey</UnderlyingIndexName>
     </key>
-    <column id="38" parent="32" name="id">
+    <column id="41" parent="35" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
-      <DefaultExpression>1</DefaultExpression>
+      <StateNumber>1085</StateNumber>
+      <DefaultExpression>nextval(&apos;products_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="39" parent="32" name="vendor_code">
+    <column id="42" parent="35" name="vendor_code">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="32" name="name">
+    <column id="43" parent="35" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="32" name="category">
+    <column id="44" parent="35" name="category_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="42" parent="32" name="type">
+    <column id="45" parent="35" name="type_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="43" parent="32" name="description">
+    <column id="46" parent="35" name="description">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="44" parent="32" name="stock_balance">
+    <column id="47" parent="35" name="stock_balance">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="45" parent="32" name="specifications">
+    <column id="48" parent="35" name="specifications">
       <Position>8</Position>
       <DataType>jsonb|0s</DataType>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>3802</TypeId>
     </column>
-    <column id="46" parent="32" name="created_at">
+    <column id="49" parent="35" name="created_at">
       <Position>9</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <DefaultExpression>timezone(&apos;UTC&apos;::text, now())</DefaultExpression>
       <TypeId>1184</TypeId>
     </column>
-    <column id="47" parent="32" name="updated_at">
+    <column id="50" parent="35" name="updated_at">
       <Position>10</Position>
       <DataType>timestamp with time zone|0s</DataType>
-      <StateNumber>789</StateNumber>
+      <StateNumber>1085</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="48" parent="32" name="products_pkey">
-      <ObjectId>16661</ObjectId>
-      <StateNumber>789</StateNumber>
+    <index id="51" parent="35" name="products_pkey">
+      <ObjectId>17025</ObjectId>
+      <StateNumber>1085</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1106,58 +1136,58 @@ true posixrules
       <ClassIds>1978</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="49" parent="32" name="products_pkey">
-      <ObjectId>16662</ObjectId>
-      <StateNumber>789</StateNumber>
+    <key id="52" parent="35" name="products_pkey">
+      <ObjectId>17026</ObjectId>
+      <StateNumber>1085</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>products_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="50" parent="32" name="products_category_fkey">
-      <ObjectId>16663</ObjectId>
-      <StateNumber>789</StateNumber>
-      <ColNames>category</ColNames>
-      <RefTableId>16636</RefTableId>
+    <foreign-key id="53" parent="35" name="products_category_id_fkey">
+      <ObjectId>17027</ObjectId>
+      <StateNumber>1085</StateNumber>
+      <ColNames>category_id</ColNames>
+      <RefTableId>16934</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>categories</RefTableName>
       <RefKeyName>categories_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="51" parent="32" name="products_type_fkey">
-      <ObjectId>16668</ObjectId>
-      <StateNumber>789</StateNumber>
-      <ColNames>type</ColNames>
-      <RefTableId>16642</RefTableId>
+    <foreign-key id="54" parent="35" name="products_type_id_fkey">
+      <ObjectId>17032</ObjectId>
+      <StateNumber>1085</StateNumber>
+      <ColNames>type_id</ColNames>
+      <RefTableId>17004</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>types</RefTableName>
       <RefKeyName>types_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="52" parent="33" name="id">
+    <column id="55" parent="36" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>785</StateNumber>
-      <DefaultExpression>1</DefaultExpression>
+      <StateNumber>1069</StateNumber>
+      <DefaultExpression>nextval(&apos;types_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="53" parent="33" name="name">
+    <column id="56" parent="36" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>785</StateNumber>
+      <StateNumber>1069</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="54" parent="33" name="category">
+    <column id="57" parent="36" name="category_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>785</StateNumber>
+      <StateNumber>1069</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="55" parent="33" name="types_pkey">
-      <ObjectId>16646</ObjectId>
-      <StateNumber>785</StateNumber>
+    <index id="58" parent="36" name="types_pkey">
+      <ObjectId>17008</ObjectId>
+      <StateNumber>1069</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1165,18 +1195,18 @@ true posixrules
       <ClassIds>1978</ClassIds>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="56" parent="33" name="types_pkey">
-      <ObjectId>16647</ObjectId>
-      <StateNumber>785</StateNumber>
+    <key id="59" parent="36" name="types_pkey">
+      <ObjectId>17009</ObjectId>
+      <StateNumber>1069</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>types_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="57" parent="33" name="types_category_fkey">
-      <ObjectId>16648</ObjectId>
-      <StateNumber>785</StateNumber>
-      <ColNames>category</ColNames>
-      <RefTableId>16636</RefTableId>
+    <foreign-key id="60" parent="36" name="types_category_id_fkey">
+      <ObjectId>17010</ObjectId>
+      <StateNumber>1069</StateNumber>
+      <ColNames>category_id</ColNames>
+      <RefTableId>16934</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>categories</RefTableName>
       <RefKeyName>categories_pkey</RefKeyName>

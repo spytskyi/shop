@@ -18,8 +18,8 @@ func CreateProduct(db *pg.DB, reqData *models.ProductCreateRequest) (err error) 
 	product := models.Product{
 		VendorCode:     reqData.VendorCode,
 		Name:           reqData.Name,
-		Category:       reqData.Category,
-		Type:           reqData.Type,
+		CategoryId:     reqData.CategoryId,
+		TypeId:         reqData.TypeId,
 		Description:    reqData.Description,
 		Specifications: specifications,
 	}

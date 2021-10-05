@@ -1,4 +1,4 @@
 CREATE TABLE IF NOT EXISTS categories (
-                                     id INTEGER PRIMARY KEY NOT NULL,
+                                     id SERIAL PRIMARY KEY,
                                      name VARCHAR(255) NOT NULL
 );

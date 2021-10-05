@@ -17,8 +17,24 @@ func NewRouter(app *iris.Application, db *pg.DB) *iris.Application {
 			controllers.InsertNewCategory(ctx, db)
 		})
 
-		productsAPI.Get("/get-square/all-triangles", func(ctx iris.Context) {
+		productsAPI.Get("/get-all-categories", func(ctx iris.Context) {
+			controllers.SelectAllCategories(ctx, db)
+		})
 
+		productsAPI.Get("/get-category-id/{id:int}", func(ctx iris.Context) {
+			controllers.SelectCategoryById(ctx, db)
+		})
+
+		productsAPI.Delete("/delete-category", func(ctx iris.Context) {
+			controllers.DeleteCategory(ctx, db)
+		})
+
+		productsAPI.Patch("/update-category", func(ctx iris.Context) {
+			controllers.UpdateCategory(ctx, db)
+		})
+
+		productsAPI.Post("/add-new-type", func(ctx iris.Context) {
+			controllers.InsertNewType(ctx, db)
 		})
 
 		productsAPI.Post("/add-square", func(ctx iris.Context) {
