@@ -13,33 +13,59 @@ func NewRouter(app *iris.Application, db *pg.DB) *iris.Application {
 		// middleware
 		productsAPI.Use(iris.Compression)
 
+		productsAPI.Post("/add-new-product", func(ctx iris.Context) {
+			controllers.InsertNewProduct(ctx, db)
+		})
+
+		//InsertNewCategory ...
 		productsAPI.Post("/add-new-category", func(ctx iris.Context) {
 			controllers.InsertNewCategory(ctx, db)
 		})
 
-		productsAPI.Get("/get-all-categories", func(ctx iris.Context) {
-			controllers.SelectAllCategories(ctx, db)
-		})
-
-		productsAPI.Get("/get-category-id/{id:int}", func(ctx iris.Context) {
-			controllers.SelectCategoryById(ctx, db)
-		})
-
-		productsAPI.Delete("/delete-category", func(ctx iris.Context) {
-			controllers.DeleteCategory(ctx, db)
-		})
-
-		productsAPI.Patch("/update-category", func(ctx iris.Context) {
-			controllers.UpdateCategory(ctx, db)
-		})
-
+		//InsertNewType ...
 		productsAPI.Post("/add-new-type", func(ctx iris.Context) {
 			controllers.InsertNewType(ctx, db)
 		})
 
-		productsAPI.Post("/add-square", func(ctx iris.Context) {
-
+		//SelectAllCategories ...
+		productsAPI.Get("/get-all-categories", func(ctx iris.Context) {
+			controllers.SelectAllCategories(ctx, db)
 		})
+
+		//SelectAllTypes ...
+		productsAPI.Get("/get-all-types", func(ctx iris.Context) {
+			controllers.SelectAllTypes(ctx, db)
+		})
+
+		//SelectCategoryById
+		productsAPI.Get("/get-category-id/{id:int}", func(ctx iris.Context) {
+			controllers.SelectCategoryById(ctx, db)
+		})
+
+		//SelectTypeById ...
+		productsAPI.Get("/get-type-id/{id:int}", func(ctx iris.Context) {
+			controllers.SelectTypeById(ctx, db)
+		})
+		//UpdateCategory ...
+		productsAPI.Patch("/update-category", func(ctx iris.Context) {
+			controllers.UpdateCategory(ctx, db)
+		})
+
+		//UpdateType ...
+		productsAPI.Patch("/update-type", func(ctx iris.Context) {
+			controllers.UpdateType(ctx, db)
+		})
+
+		//DeleteCategory ...
+		productsAPI.Delete("/delete-category", func(ctx iris.Context) {
+			controllers.DeleteCategory(ctx, db)
+		})
+
+		//DeleteType ...
+		productsAPI.Delete("/delete-type", func(ctx iris.Context) {
+			controllers.DeleteType(ctx, db)
+		})
+
 	}
 
 	return app

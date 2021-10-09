@@ -5,22 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9877a21-3aac-45b1-8ff1-e4c3e0d011b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/type.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositories/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/specifications_electronics.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059/storage_v2/_src_/database/shop.9to1AA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0aed65e8-fa0e-4029-8052-5b4206fc1059/storage_v2/_src_/database/shop.9to1AA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/access.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/type.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/type.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/laptop.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/product.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/type.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/type.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres/migrations/000001_create_products_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/migrations/000001_create_products_table.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/migrations/000002_create_categories_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/migrations/000002_create_categories_table.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postgres/migrations/000003_create_types_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/postgres/migrations/000003_create_types_table.up.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repositories/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/category.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repositories/product.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/product.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/type.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/type.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,14 @@
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1yuYCKwDgYHWfbxJ8rvVZYmCK99" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,6 +70,12 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/models/specifications" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
