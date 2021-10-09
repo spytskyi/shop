@@ -17,22 +17,23 @@ import "encoding/json"
 type Product struct {
 	tableName      struct{} `pg:"products"`
 	Id             int      `pg:"id,pk"`
-	VendorCode     string
 	Name           string
+	VendorCode     float64
+	Price          float64
+	StockBalance   int
+	Description    string
+	Specifications json.RawMessage
 	CategoryId     int
 	TypeId         int
-	Description    string
-	StockBalance   int
-	Specifications json.RawMessage
 }
 
 type ProductCreateRequest struct {
-	VendorCode     string `json:"vendor_code"`
-	Name           string `json:"name_product"`
-	CategoryId     int
-	TypeId         int
-	StockBalance   int `json:"stock_balance"`
-	Description    string
-	Specifications json.RawMessage
-	//Specifications *Specifications
+	Name           string          `json:"name"`
+	VendorCode     float64         `json:"vendor_code"`
+	Price          float64         `json:"price"`
+	StockBalance   int             `json:"stock_balance"`
+	Description    string          `json:"description"`
+	Specifications json.RawMessage `json:"specifications"`
+	CategoryId     int             `json:"category_id"`
+	TypeId         int             `json:"type_id"`
 }

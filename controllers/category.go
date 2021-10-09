@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"shop/models"
 	"shop/repositories"
 	"strings"
@@ -30,14 +29,20 @@ func InsertNewCategory(ctx iris.Context, db *pg.DB) {
 		return
 	}
 
-	_, err = repositories.RepositoryGetCategoryByName(db, category.Name)
-	if err == nil {
+	isExists, err := repositories.RepositoryCheckIsExistsByName(db, category.Name)
+	if isExists {
 		ctx.StopWithProblem(iris.StatusBadRequest, iris.NewProblem().
 			Title("This category name already exists").DetailErr(err))
 		return
 	}
 
-	err = repositories.RepositoryCreateCategory(db, &category)
+	if err != nil {
+		ctx.StopWithProblem(iris.StatusBadRequest, iris.NewProblem().
+			Title("Categories creation failure").DetailErr(err))
+		return
+	}
+
+	err = repositories.RepositoryInsertCategory(db, &category)
 	if err != nil {
 		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
 			Title("Categories creation failure").DetailErr(err))
@@ -55,7 +60,7 @@ func InsertNewCategory(ctx iris.Context, db *pg.DB) {
 
 //SelectAllCategories ...
 func SelectAllCategories(ctx iris.Context, db *pg.DB) {
-	_, err := repositories.RepositoryGetAllCategories(db)
+	_, err := repositories.RepositorySelectAllCategories(db)
 	if err != nil {
 		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
 			Title("Categories selecting failure").DetailErr(err))
@@ -81,7 +86,7 @@ func SelectCategoryById(ctx iris.Context, db *pg.DB) {
 		return
 	}
 
-	_, err = repositories.RepositoryGetCategoryById(db, categoryId)
+	_, err = repositories.RepositorySelectCategoryById(db, categoryId)
 	if err != nil {
 		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
 			Title("Category select failure").DetailErr(err))
@@ -120,14 +125,20 @@ func UpdateCategory(ctx iris.Context, db *pg.DB) {
 		return
 	}
 
-	_, err = repositories.RepositoryGetCategoryByName(db, category.Name)
-	if err == nil {
+	isExists, err := repositories.RepositoryCheckIsExistsByName(db, category.Name)
+	if isExists {
 		ctx.StopWithProblem(iris.StatusBadRequest, iris.NewProblem().
 			Title("This category name already exists").DetailErr(err))
 		return
 	}
 
-	_, err = repositories.RepositoryGetCategoryById(db, category.Id)
+	if err != nil {
+		ctx.StopWithProblem(iris.StatusBadRequest, iris.NewProblem().
+			Title("Categories creation failure").DetailErr(err))
+		return
+	}
+
+	_, err = repositories.RepositorySelectCategoryById(db, category.Id)
 	if err != nil {
 		ctx.StopWithProblem(iris.StatusBadRequest, iris.NewProblem().
 			Title("There is no such category").DetailErr(err))
@@ -162,7 +173,21 @@ func DeleteCategory(ctx iris.Context, db *pg.DB) {
 		return
 	}
 
-	err = repositories.RepositoryRemoveCategory(db, category)
+	arrTypes, err := repositories.RepositorySelectAllTypesByCategoryId(db, category.Id)
+	if err != nil {
+		ctx.StopWithProblem(iris.StatusBadRequest, iris.NewProblem().
+			Title("There is no such category").DetailErr(err))
+		return
+	}
+
+	err = repositories.RepositoryDeleteAllTypesByCategoryId(db, arrTypes)
+	if err != nil {
+		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
+			Title("Categories remove failure").DetailErr(err))
+		return
+	}
+
+	err = repositories.RepositoryDeleteCategory(db, category)
 	if err != nil {
 		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
 			Title("Categories remove failure").DetailErr(err))
@@ -176,6 +201,5 @@ func DeleteCategory(ctx iris.Context, db *pg.DB) {
 			Title("Category remove failure").DetailErr(err))
 		return
 	}
-	fmt.Println(err)
 	return
 }

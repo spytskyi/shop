@@ -4,7 +4,7 @@ type Type struct {
 	tableName  struct{} `pg:"types"`
 	Id         int      `pg:",pk"`
 	Name       string
-	CategoryId int `pg:"on_delete:RESTRICT"`
+	CategoryId int
 }
 
 type TypeRequest struct {
