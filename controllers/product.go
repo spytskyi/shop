@@ -48,3 +48,21 @@ func InsertNewProduct(ctx iris.Context, db *pg.DB) {
 	}
 	return
 }
+
+//func SelectAllProducts(ctx iris.Context, db *pg.DB) {
+//	_, err := repositories.RepositorySelectAllProducts(db)
+//	if err != nil {
+//		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
+//			Title("Products selecting failure"))
+//		return
+//	}
+//
+//	ctx.StatusCode(iris.StatusOK)
+//	_, err = ctx.JSON(iris.Map{"message": "OK"})
+//	if err != nil {
+//		ctx.StopWithProblem(iris.StatusInternalServerError, iris.NewProblem().
+//			Title("Products selecting failure"))
+//		return
+//	}
+//	return
+//}
